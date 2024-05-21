@@ -1,0 +1,33 @@
+﻿@using EntityLayer
+@page "/form"
+<h3>FormComp</h3>
+
+<EditForm Model="@r" OnValidSubmit="@fun">
+
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+    @*<ValidationSummary></ValidationSummary>*@
+
+     Fid <input type="text" @bind-value="r.Fid" /><br />
+    <ValidationMessage For="()=>r.Fid"></ValidationMessage>
+     Fname <input type="text" @bind-value="r.Fname" /><br />
+     <ValidationMessage For="()=>r.Fname"></ValidationMessage>
+   
+     <button type="submit">Update Record</button>
+
+</EditForm>
+
+<hr />
+
+result : @cid
+
+@code {
+    public int cid { get; set; } = 0;
+    public Furniture r { get; set; }= new Furniture(500,"Dinning Table");
+   
+    public void fun()
+    {
+        r.Fid = 90;
+        r.Fname = "updated";
+    }
+
+}

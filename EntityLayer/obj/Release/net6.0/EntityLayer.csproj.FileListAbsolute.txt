@@ -1,0 +1,11 @@
+E:\March23\CrudApplicationWebApiService\EntityLayer\bin\Release\net6.0\EntityLayer.deps.json
+E:\March23\CrudApplicationWebApiService\EntityLayer\bin\Release\net6.0\EntityLayer.dll
+E:\March23\CrudApplicationWebApiService\EntityLayer\bin\Release\net6.0\EntityLayer.pdb
+E:\March23\CrudApplicationWebApiService\EntityLayer\obj\Release\net6.0\EntityLayer.GeneratedMSBuildEditorConfig.editorconfig
+E:\March23\CrudApplicationWebApiService\EntityLayer\obj\Release\net6.0\EntityLayer.AssemblyInfoInputs.cache
+E:\March23\CrudApplicationWebApiService\EntityLayer\obj\Release\net6.0\EntityLayer.AssemblyInfo.cs
+E:\March23\CrudApplicationWebApiService\EntityLayer\obj\Release\net6.0\EntityLayer.csproj.CoreCompileInputs.cache
+E:\March23\CrudApplicationWebApiService\EntityLayer\obj\Release\net6.0\EntityLayer.dll
+E:\March23\CrudApplicationWebApiService\EntityLayer\obj\Release\net6.0\refint\EntityLayer.dll
+E:\March23\CrudApplicationWebApiService\EntityLayer\obj\Release\net6.0\EntityLayer.pdb
+E:\March23\CrudApplicationWebApiService\EntityLayer\obj\Release\net6.0\ref\EntityLayer.dll

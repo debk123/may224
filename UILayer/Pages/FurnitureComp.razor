@@ -1,0 +1,91 @@
+﻿@using UILayer.Shared.Services
+@using EntityLayer
+@page "/fur"
+<h3>FurnitureComp</h3>
+<hr />
+@if (list == null)
+{
+    <div><h1>Loading(Communicating with server)......</h1></div>
+}
+else
+{
+    
+
+<table bgColor="orange" width="70%">
+    <tr>
+        <td>Furniture Id</td>
+        <td>Furniture Name</td>
+    </tr>
+    @foreach(Furniture f in list){
+       <tr>
+            <td> @f.Fid</td>
+            <td> @f.Fname</td>
+       </tr>
+              
+    }
+</table>
+<hr />
+Fid     :   <input type="text" @bind="fid" /> <br />
+Fname   :   <input type="text" @bind="fname" />
+<br />
+<button @onclick="Add">Add Furniture</button>
+<button @onclick="ViewById">View Furniture</button>
+<button @onclick="Update">Update Furniture</button>
+<button @onclick="Delete">Delete Furniture</button>
+}
+
+@code 
+{
+    [Inject]
+    public IFur ser{ get; set; }
+
+    public List<Furniture> list{ get; set; }
+    public int fid{ get; set; }
+    public string fname{ get; set; }
+
+    public Furniture rec = new Furniture();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await ShowAllFurniture();
+    }
+
+
+    public async Task ShowAllFurniture()
+    {
+        list = (await ser.GetAllFurnitureData()).ToList();
+    }
+
+    public async Task Add()
+    {
+        rec.Fid = fid;
+        rec.Fname = fname;
+
+        await ser.AddFurniture(rec);
+        await ShowAllFurniture();
+    }
+
+    public async Task ViewById()
+    {
+        rec = await ser.GetFurnitureDataById(fid);
+        fname = rec.Fname;
+
+    }
+
+    public async Task Update()
+    {
+        rec.Fid = fid;
+        rec.Fname = fname;
+
+        await ser.UpdateFurniture(rec);
+        await ShowAllFurniture();
+
+    }
+
+    public async Task Delete()
+    {
+        await ser.DeleteFurniture(fid);
+        await ShowAllFurniture();
+
+    }
+}
